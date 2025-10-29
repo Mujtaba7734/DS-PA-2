@@ -65,6 +65,3 @@ void PostList::displayPosts() const {
     std::cout << std::endl;
 }
 
-bool PostList::isEmpty() const {
-    return head == nullptr;
-}
