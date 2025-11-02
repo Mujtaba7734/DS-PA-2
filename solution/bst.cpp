@@ -40,6 +40,10 @@ shared_ptr<typename BST<K, V>::BSTNode> BST<K, V>::insertHelper(shared_ptr<BSTNo
     {
         node->right = insertHelper(node->right, key, value);
     }
+    else
+    {
+        return node;
+    }
     updateHeight(node);
     return node;
 }

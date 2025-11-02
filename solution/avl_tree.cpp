@@ -30,6 +30,10 @@ shared_ptr<typename AVLTree<K, V>::BSTNode> AVLTree<K, V>::insertAVL(shared_ptr<
         this->nodeCount++;
         return new_Node;
     }
+    if (!this->comparator(key, node->key) && !this->comparator(node->key, key))
+    {
+        return node;
+    }
     if (this->comparator(key, node->key))
     {
         node->left = insertAVL(node->left, key, value);
